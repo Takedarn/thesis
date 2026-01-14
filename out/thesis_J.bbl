@@ -1,0 +1,34 @@
+\begin{thebibliography}{1}
+
+\bibitem{devlin2019bertpretrainingdeepbidirectional}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language understanding, 2019.
+
+\bibitem{devlin-etal-2019-bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock {BERT}: Pre-training of deep bidirectional transformers for language understanding.
+\newblock In Jill Burstein, Christy Doran, and Thamar Solorio, editors, {\em Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)}, pp. 4171--4186, Minneapolis, Minnesota, June 2019. Association for Computational Linguistics.
+
+\bibitem{hinton2015distillingknowledgeneuralnetwork}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\newblock Distilling the knowledge in a neural network, 2015.
+
+\bibitem{jiao-etal-2020-tinybert}
+Xiaoqi Jiao, Yichun Yin, Lifeng Shang, Xin Jiang, Xiao Chen, Linlin Li, Fang Wang, and Qun Liu.
+\newblock {T}iny{BERT}: Distilling {BERT} for natural language understanding.
+\newblock In Trevor Cohn, Yulan He, and Yang Liu, editors, {\em Findings of the Association for Computational Linguistics: EMNLP 2020}, pp. 4163--4174, Online, November 2020. Association for Computational Linguistics.
+
+\bibitem{sundararajan2017axiomaticattributiondeepnetworks}
+Mukund Sundararajan, Ankur Taly, and Qiqi Yan.
+\newblock Axiomatic attribution for deep networks, 2017.
+
+\bibitem{vaswani2023attentionneed}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need, 2023.
+
+\bibitem{wang-etal-2018-glue}
+Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman.
+\newblock {GLUE}: A multi-task benchmark and analysis platform for natural language understanding.
+\newblock In Tal Linzen, Grzegorz Chrupa{\l}a, and Afra Alishahi, editors, {\em Proceedings of the 2018 {EMNLP} Workshop {B}lackbox{NLP}: Analyzing and Interpreting Neural Networks for {NLP}}, pp. 353--355, Brussels, Belgium, November 2018. Association for Computational Linguistics.
+
+\end{thebibliography}

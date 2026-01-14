@@ -1,0 +1,244 @@
+\documentclass[12pt,a4j]{jreport}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\begin{document}
+	hispagestyle{empty}
+\begin{center}
+修士論文\\% どちらか一方を消してください．
+\vfill
+推論における重要度単語を転移させる知識蒸留法\\\
+\vfill
+武田 遥暉\\
+\vfill
+主指導教員  白井 清昭\\
+\vfill
+北陸先端科学技術大学院大学\\
+先端科学技術研究科\\
+（情報科学）\\ %取得希望学位
+\vfill
+令和8年3月\\ % 学位授与年月
+\vfill
+\end{center}
+\clearpage
+\pagestyle{empty}
+\centerline{Abstract}
+English abstract (1200 words)\\
+〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+\clearpage
+\centerline{概要}
+日本語の概要\\
+〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+
+\clearpage\setcounter{page}{0}\pagenumbering{roman}\pagestyle{plain}
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage\setcounter{page}{0}\pagenumbering{arabic}
+
+\chapter{はじめに}
+
+\section{背景}
+大規模言語モデル（Large Language Model; LLM）は、大規模テキストで事前学習された言語モデルであり、文脈情報を高次元表現として獲得することでさまざまな言語タスクにおいて高い性能を示している。特に分類モデルとして用いる場合、入力文全体の意味情報を統合した表現を利用することで、文書分類や感情分析などにおいて高い性能を発揮する。
+
+このような能力を実現するため近年のLLMは大規模なモデルサイズを有しており、その運用には多数のGPUをはじめとする計算機資源を必要とする。その結果、十分な資金力を持つ一部の組織のみが利用可能である点や、クラウド経由でGPU資源にアクセスできない環境では導入が困難である点が、実社会への幅広い展開を妨げる課題となっている。
+
+そのため、LLMを教師モデル、より少ないパラメータを持つモデルを生徒モデルとし、教師モデルの性能を可能な限り維持しながら、タスク遂行能力を生徒モデルへ転移する手法として知識蒸留が提案されている。特に分類タスクにおいては、性能をほぼ維持したままモデルサイズを半分程度まで削減可能であるなど、高い有効性が示されており知識蒸留はモデル軽量化の代表的な手法として確立している。
+
+しかしながら、知識蒸留は、計算資源の制約下において教師モデルの代替として利用可能な生徒モデルを構築することを目的とした技術であるにもかかわらず、蒸留によって学習された生徒モデルは分類精度を維持できている一方、推論時に重要と判断する単語が教師モデルと一致しないことが報告されている。このような差異は、医療分野や金融分野など判断根拠の信頼性が重視される領域において致命的な問題となり得るため、生徒モデルを教師モデルの単純な代替として用いることには依然として課題が残っている。
+
+\section{目的}
+本研究では、教師モデルと同じ単語に注目して生徒モデルが推論を行うよう学習させることを目的とする。対象タスクに対して十分に学習された教師モデルを用意し、以下の手順に従って知識蒸留を適用する。
+
+まず、教師モデルよりも小規模な未学習の生徒モデルを準備し、両モデルに同一の入力インスタンスを与えて推論を行う。次に、得られた推論結果に対してIntegrated Gradientsを用いて単語重要度を算出し、それらを重要度分布として表現する。最後に、教師モデルと生徒モデルの重要度分布が近づくよう損失関数を設計し、先行研究で提案されている知識蒸留手法に当該損失項を導入することで、生徒モデルの学習を行う。本手法により、分類精度を先行研究と同程度に維持したまま、推論時に重要と判断される単語に関して教師モデルとの整合性を向上させることを狙う。
+
+\section{本論文の構成}
+本論文の構成は以下の通りである。2章では先行研究について述べる。3章では提案手法について詳細に説明する。4章では提案手法の評価実験について述べる。最後に5章では、本研究の手法についてのまとめと今後の課題について述べる。
+
+\chapter{関連研究}
+本章では本研究の関連研究について述べる。本章で述べる研究トピックはKnowledge Distillation（以下、知識蒸留）\cite{hinton2015distillingknowledgeneuralnetwork}である。知識蒸留は、性能が高くパラメータ数も大きいモデルを教師モデルとし、パラメータ数が小さいモデルへとタスクを解くための能力を転移されるための代表的な技術である。これまでに様々な知識蒸留手法が提案されてきており、教師モデルの出力層の知識を転移するものや、隠れ状態からの知識も転移させるもの、両方から知識を転移させるもの等、様々なパターンの知識蒸留のアプローチが提案されてきた。
+
+また、分類モデルの知識蒸留における教師モデルとしてBERT\cite{devlin2019bertpretrainingdeepbidirectional}を用いられることが多い。BERTを教師モデルにして、知識蒸留されたモデルの代表的なものとしてTinyBERT\cite{jiao-etal-2020-tinybert}が存在する。
+
+これらの言語モデルの推論根拠を提供する技術としてIntegrated Gradient\cite{sundararajan2017axiomaticattributiondeepnetworks}がある。Integrated Gradientsは画像処理分野で提案されたものではあるが本研究ではモデルが重要であると認識した単語を抽出するために利用する。
+
+以下、\ref{kd-fundamental}節では、知識蒸留の原理的な設計について述べる。\ref{bert-model}節では、教師モデルとして用いるBERTについて紹介する。\ref{tinybert-model}節では、知識蒸留によって構築された代表的なモデルであるTinyBERTについて述べる。\ref{intefrated-gradient}節ではモデルが推論する際の根拠を提示する技術としてIntegrated Gradientsを紹介する。最後に、\ref{methodlogy-characteristic}では、本研究の特色について述べる。
+
+\section{知識蒸留}
+\label{kd-fundamental}
+
+知識蒸留（Knowledge Distillation）は、高性能である一方、パラメータ数が多い教師モデルから、
+より小規模な生徒モデルへ特定のタスクを解く能力を転移させるための代表的な技術である。
+一般に、教師モデルは対象タスクに対して十分に学習（ファインチューニング）されており、
+生徒モデルは教師モデルの振る舞いを模倣することで効率的な学習を行う。
+
+分類タスクでは、通常、あるドメインに対して数百から数万のラベル付きインスタンスが与えられる。
+代表的な自然言語理解ベンチマークであるGLUE\cite{wang-etal-2018-glue}は、
+複数の分類タスクから構成されるデータセット群であり、
+知識蒸留の評価においても標準的に用いられる。
+GLUEに含まれるMRPC（Microsoft Research Paraphrase Corpus）は、
+2つの英文が意味的に等価であるかどうかを判定する二値分類タスクである。
+各インスタンスにはラベル $y \in \{0,1\}$ が付与されており、
+意味的に等価な場合を1、そうでない場合を0と定義する。
+
+\begin{quote}
+例\\
+sentence1: Amrozi accused his brother, whom he called ``the witness'', of deliberately distorting his evidence.\\
+sentence2: Referring to him as only ``the witness'', Amrozi accused his brother of deliberately distorting his evidence.\\
+label: equivalent (1)
+\end{quote}
+
+通常の分類モデルの学習では、
+生徒モデル $f_s$ が入力 $x$ に対して予測するクラス確率分布
+$p_s(y \mid x)$ と、
+正解ラベル $y$ との間のクロスエントロピー損失を最小化する。
+この損失関数は、次式で定義される。
+\begin{equation}
+\mathcal{L}_{\mathrm{CE}}
+= - \sum_{c} y_c \log p_s(c \mid x)
+\label{eq:ce}
+\end{equation}
+ここで、$c$ はクラスを表し、
+$y_c$ は正解クラスに対応するワンホット表現である。
+
+知識蒸留では、
+この正解ラベルに基づく学習に加えて、
+同一の入力 $x$ に対する教師モデル $f_t$ の出力分布
+$p_t(y \mid x)$ を、
+生徒モデルが模倣することを目的とする。
+教師モデルと生徒モデルの出力分布の乖離を測る指標として、
+Kullback--Leibler（KL）ダイバージェンスが一般に用いられる。
+このとき、知識蒸留損失は、次式で表される。
+\begin{equation}
+\mathcal{L}_{\mathrm{KD}}
+= \mathrm{KL}\bigl(
+p_t(\cdot \mid x)
+\,\|\, 
+p_s(\cdot \mid x)
+\bigr)
+\label{eq:kd}
+\end{equation}
+ここで、$\cdot$ はクラス全体を表し、
+教師モデルが出力する確率分布全体を、
+生徒モデルが近似することを意味する。
+
+最終的な学習では、
+正解ラベルに基づくクロスエントロピー損失と、
+教師モデルの振る舞いを模倣する知識蒸留損失を組み合わせた、
+次の損失関数を最小化する。
+\begin{equation}
+\mathcal{L}
+= (1-\lambda)\mathcal{L}_{\mathrm{CE}}
+\quad+\quad \lambda \mathcal{L}_{\mathrm{KD}}
+\label{eq:total}
+\end{equation}
+ここで、$\lambda \in [0,1]$ はハイパーパラメータであり、
+正解ラベルと教師モデルの知識のどちらを重視するかを制御する。
+
+このように知識蒸留では、
+データセットに明示的に含まれるラベル情報だけでなく、
+教師モデルが獲得した予測分布という暗黙的な知識を
+生徒モデルに転移することで、
+高い性能を維持したままモデルの軽量化を実現することを目的としている。
+
+\section{事前学習済み言語モデル}
+\subsection{BERTの事前学習}
+\label{bert-model}
+
+BERT\cite{devlin-etal-2019-bert}は、Transformer\cite{vaswani2023attentionneed}を基盤とした双方向言語モデルであり、大規模コーパスを用いた事前学習によって汎用的な言語表現を獲得する。BERTの事前学習では、Masked Language Model（MLM）と Next Sentence Prediction（NSP）の2つのタスクが用いられる。
+
+MLMでは、入力文中の一部の単語をマスクし、その単語を周辺文脈から予測することで単語表現を学習する。MLMの損失関数は以下のように定義される。
+\begin{equation}
+\mathcal{L}_{\mathrm{MLM}}
+= - \sum_{i=1}^{N} \log p(t_i \mid T_i)
+\label{eq:mlm}
+\end{equation}
+ここで、$t_i$ はマスクされた単語、$T_i$ は $Ft_i$ 以外の単語からなる入力文を表す。
+
+次に、NSPは2つの文が元の文書中で連続しているか否かを判定するタスクであり、文間の関係性を学習することを目的としている。NSPの損失関数は次式で表される。
+\begin{equation}
+\mathcal{L}_{\mathrm{NSP}}
+= - \left[
+y \log P_{\mathrm{NSP}}
+\; + \; (1 - y) \log (1 - P_{\mathrm{NSP}})
+\right]
+\label{eq:nsp}
+\end{equation}
+ここで、$y$ は文の連続性ラベルであり、2つの文が連続している場合は1、そうでない場合は0を取る。また、$P_{\mathrm{NSP}}$ は2文が連続しているとモデルが予測する確率を表す。
+BERTの事前学習では、式(\ref{eq:mlm})および式(\ref{eq:nsp})で定義される損失を同時に最小化することで、単語レベルおよび文レベルの意味関係を考慮した言語表現を獲得する。
+
+\subsection{教師モデルとしてのBERT}
+本研究では教師モデルとして、BERTを用いる。BERTは事前学習によって大規模コーパスでの事前学習により汎用的な言語表現を獲得しており、このモデルに対して本研究で対象とするタスクでファインチューニングすることを行い、教師モデルとして採用する。
+\section{知識蒸留によって構築されたモデル}
+\subsection{TinyBERT}
+\label{tinybert-model}
+TinyBERT\cite{jiao-etal-2020-tinybert}は、BERTを教師モデルとして知識蒸留を適用することで構築された軽量な言語モデルである。TinyBERTは、教師モデルの出力層だけでなく、中間層の隠れ状態やAttention機構の重みも模倣することで、モデルサイズを大幅に削減しながら高い性能を維持することに成功している。
+
+\subsubsection{データ拡張 (data augmentation)}
+学習においてTinyBERTは下流タスクでの蒸留効果を高めるためにデータ拡張を併用することが知られている。具体的には、元のデータセットに対してランダムに単語を挿入・削除・置換することで多様な入力インスタンスを生成し、頑健性を向上させる。
+
+\subsubsection{学習の流れ}
+TinyBERTの蒸留は大きく2段階で行われる。
+
+\paragraph{事前学習段階 (pre-training)}
+事前学習段階では、BERTの事前学習で用いられたMasked Language Model（MLM）やNext Sentence Prediction（NSP）に加えて、中間層の隠れ状態やAttention重みの模倣を目的とした損失を導入する。これにより、生徒モデルは教師の内部表現を効率的に学習し、下流タスクへの基盤を構築する。
+
+\paragraph{下流タスクのファインチューニング (downstream fine-tuning)}
+下流タスクへの適応はさらに2段階（段階的蒸留）で実施される。
+
+\begin{description}
+	\setlength{\itemsep}{0.8\baselineskip}
+	\item[第1段階 — 中間層蒸留 (intermediate layer distillation)]
+	まず中間層の隠れ状態やAttention重みの模倣損失を導入し、生徒の内部表現を教師に近づけることで下流タスクへの適応準備を行う。
+
+	\item[第2段階 — 出力層蒸留 (prediction layer distillation)]
+	続いて教師の出力（ソフトラベル）とデータのハードラベルを併用して生徒の出力層を学習させ、教師モデルの推論能力を模倣させる。
+\end{description}
+
+TinyBERTはこの学習の流れを通じてBERTの
+
+
+% TinyBERTの詳細な説明をここに追加
+
+\section{モデルの推論根拠の解釈に関する研究}
+\label{model-explain}
+\subsection{Integrated Gradient}
+\label{integrated-gradient}
+Integrated Gradients（統合勾配法）は、深層学習モデルの予測に対する各入力特徴量の寄与度を評価するための手法である。具体的には、モデルの出力に対する入力特徴量の勾配を積分することで、各特徴量が予測にどれだけ影響を与えたかを定量化する。本研究では、Integrated Gradientsを用いて、言語モデルが推論時に重要と判断した単語を特定する。具体的な計算式は以下によって定義される。
+
+
+\section{本研究の特徴}
+\label{methodlogy-characteristic}
+\chapter{提案手法}
+〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇 (図 \\ref{fig1})
+\begin{figure}
+\centering
+% \includegraphics[clip,width=90mm]{boltzmann.jpg}
+(図を貼る)
+% 図のキャプションは図の下に置く。
+\caption{図のキャプション}\label{fig1}
+\end{figure}
+\chapter{実験・評価}
+\begin{table}
+\centering
+% 表のキャプションは表の上に置く。
+\caption{表のキャプション}\label{table1}
+\begin{tabular}{r|rr}
+& a & b\\ \hline
+1& 0.25 & 0.33\\
+2& 0.75 & 0.66\\
+\end{tabular}
+\end{table}
+\chapter{おわりに}
+
+% 参考文献
+\renewcommand{\bibname}{参考文献}
+% BibTeX を使うとき
+\renewcommand{\em}{\it}% booktitle に下線を引かない
+\bibliographystyle{jplain}
+\bibliography{reference}
+
+% 付録
+% \appendix
+% \chapter{参考データ}
+
+\end{document}
