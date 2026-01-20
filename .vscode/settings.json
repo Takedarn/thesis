@@ -1,31 +1,29 @@
 {
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "platex->dvipdfmx",
-            "tools": [
-                "platex->dvipdfmx"
-            ]
-        }
-    ],
-    "latex-workshop.latex.tools": [
-        {
-            "name": "platex->dvipdfmx",
-            "command": "/Library/TeX/texbin/latexmk",
-            "args": [
-                "-e",
-                "$latex='/Library/TeX/texbin/platex -kanji=utf8 -synctex=1 -interaction=nonstopmode -file-line-error %O %S'",
-                "-e",
-                "$dvipdf='/Library/TeX/texbin/dvipdfmx %O -o %D %S'",
-                "-e",
-                "$bibtex='/Library/TeX/texbin/pbibtex -kanji=utf8 %O %B'",
-                "-e",
-                "$makeindex='/Library/TeX/texbin/mendex -U %O -o %D %S'",
-                "-pdfdvi",
-                "-outdir=out",
-                "%DOC%"
-            ]
-        }
-    ],
-    "latex-workshop.latex.outDir": "out",
-    "latex-workshop.latex.autoBuild.run": "onSave"
+  "latex-workshop.latex.tools": [
+    {
+      "name": "platex->dvipdfmx",
+      "command": "latexmk",
+      "args": [
+        "-e",
+        "$latex='platex -kanji=utf8 -synctex=1 -interaction=nonstopmode -file-line-error %O %S'",
+        "-e",
+        "$dvipdf='dvipdfmx %O -o %D %S'",
+        "-e",
+        "$bibtex='pbibtex -kanji=utf8 %O %B'",
+        "-e",
+        "$makeindex='mendex -U %O -o %D %S'",
+        "-pdfdvi",
+        "-outdir=out",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "platex->dvipdfmx",
+      "tools": ["platex->dvipdfmx"]
+    }
+  ],
+  "latex-workshop.latex.outDir": "out",
+  "latex-workshop.latex.autoBuild.run": "onSave"
 }

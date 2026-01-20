@@ -13,9 +13,27 @@
 \contentsline {subsubsection}{学習の流れ}{6}{}%
 \contentsline {paragraph}{事前学習段階 (pre-training)}{6}{}%
 \contentsline {paragraph}{下流タスクのファインチューニング (downstream fine-tuning)}{6}{}%
-\contentsline {section}{\numberline {2.4}モデルの推論根拠の解釈に関する研究}{6}{}%
-\contentsline {subsection}{\numberline {2.4.1}Integrated Gradient}{6}{}%
-\contentsline {section}{\numberline {2.5}本研究の特徴}{7}{}%
-\contentsline {chapter}{\numberline {第3章}提案手法}{8}{}%
-\contentsline {chapter}{\numberline {第4章}実験・評価}{9}{}%
-\contentsline {chapter}{\numberline {第5章}おわりに}{10}{}%
+\contentsline {section}{\numberline {2.4}モデルの推論根拠の解釈に関する研究}{7}{}%
+\contentsline {subsection}{\numberline {2.4.1}Integrated Gradient}{7}{}%
+\contentsline {paragraph}{感度 (Sensitivity)}{7}{}%
+\contentsline {paragraph}{完全性 (Completeness)}{7}{}%
+\contentsline {section}{\numberline {2.5}本研究の特徴}{9}{}%
+\contentsline {chapter}{\numberline {第3章}提案手法}{10}{}%
+\contentsline {section}{\numberline {3.1}概要}{10}{}%
+\contentsline {section}{\numberline {3.2}重要度分布の作成}{11}{}%
+\contentsline {subsection}{\numberline {3.2.1}Integrated Gradientsによる単語重要度の算出}{11}{}%
+\contentsline {subsection}{\numberline {3.2.2}重要度分布の作成}{11}{}%
+\contentsline {section}{\numberline {3.3}重要度分布の最小化}{11}{}%
+\contentsline {section}{\numberline {3.4}生徒モデルの学習}{11}{}%
+\contentsline {subsection}{\numberline {3.4.1}データ拡張}{11}{}%
+\contentsline {subsection}{\numberline {3.4.2}提案手法を組み込んだ蒸留}{11}{}%
+\contentsline {chapter}{\numberline {第4章}評価}{12}{}%
+\contentsline {section}{\numberline {4.1}Jaccard係数による評価}{12}{}%
+\contentsline {subsection}{\numberline {4.1.1}実験条件}{12}{}%
+\contentsline {subsection}{\numberline {4.1.2}結果と考察}{12}{}%
+\contentsline {section}{\numberline {4.2}Rankingによる評価}{12}{}%
+\contentsline {subsection}{\numberline {4.2.1}実験条件}{12}{}%
+\contentsline {subsection}{\numberline {4.2.2}結果と考察}{12}{}%
+\contentsline {chapter}{\numberline {第5章}おわりに}{13}{}%
+\contentsline {section}{\numberline {5.1}本研究のまとめ}{13}{}%
+\contentsline {section}{\numberline {5.2}今後の課題}{13}{}%
