@@ -31,8 +31,4 @@ Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bo
 \newblock {GLUE}: A multi-task benchmark and analysis platform for natural language understanding.
 \newblock In Tal Linzen, Grzegorz Chrupa{\l}a, and Afra Alishahi, editors, {\em Proceedings of the 2018 {EMNLP} Workshop {B}lackbox{NLP}: Analyzing and Interpreting Neural Networks for {NLP}}, pages 353--355, Brussels, Belgium, November 2018. Association for Computational Linguistics.
 
-\bibitem{jmlpaper}
-Zifu Wang, Xuefei Ning, and Matthew~B. Blaschko.
-\newblock Jaccard metric losses: Optimizing the jaccard index with soft labels, 2023.
-
 \end{thebibliography}

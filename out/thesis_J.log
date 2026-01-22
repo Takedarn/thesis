@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2026.1.14)  21 JAN 2026 17:23
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2026.1.14)  22 JAN 2026 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -123,50 +123,90 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen178
+\lightrulewidth=\dimen179
+\cmidrulewidth=\dimen180
+\belowrulesep=\dimen181
+\belowbottomsep=\dimen182
+\aboverulesep=\dimen183
+\abovetopsep=\dimen184
+\cmidrulesep=\dimen185
+\cmidrulekern=\dimen186
+\defaultaddspace=\dimen187
+\@cmidla=\count297
+\@cmidlb=\count298
+\@aboverulesep=\dimen188
+\@belowrulesep=\dimen189
+\@thisruleclass=\count299
+\@lastruleclass=\count300
+\@thisrulewidth=\dimen190
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen191
+\ar@mcellbox=\box72
+\extrarowheight=\dimen192
+\NC@list=\toks24
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box73
+)
+\TX@col@width=\dimen193
+\TX@old@table=\dimen194
+\TX@old@col=\dimen195
+\TX@target=\dimen196
+\TX@delta=\dimen197
+\TX@cols=\count301
+\TX@ftn=\toks25
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count297
-\float@exts=\toks24
-\float@box=\box72
-\@float@everytoks=\toks25
-\@floatcapt=\box73
+\c@float@type=\count302
+\float@exts=\toks26
+\float@box=\box74
+\@float@everytoks=\toks27
+\@floatcapt=\box75
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2025-10-09 L3 backend support: dvips
-\l__pdfannot_backend_content_box=\box74
-\l__pdfannot_backend_model_box=\box75
-\g__pdfannot_backend_int=\count298
-\g__pdfannot_backend_link_int=\count299
-\g__pdfannot_backend_link_sf_int=\count300
+\l__pdfannot_backend_content_box=\box76
+\l__pdfannot_backend_model_box=\box77
+\g__pdfannot_backend_int=\count303
+\g__pdfannot_backend_link_int=\count304
+\g__pdfannot_backend_link_sf_int=\count305
 ) (out/thesis_J.aux)
 \openout1 = `thesis_J.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
  [1
 
 ] [2] [3
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <24.88> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 35.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <24.88> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 35.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 38.
  (out/thesis_J.toc
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 1.
@@ -201,9 +241,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 第 1 章
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 42.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 42.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 45.
 [1
 
 
@@ -213,11 +253,11 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 146.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 149.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 146.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 149.
  [4] [5]
-Overfull \hbox (1.9537pt too wide) in paragraph at lines 193--194
+Overfull \hbox (1.9537pt too wide) in paragraph at lines 196--197
 []\JY1/mc/m/n/12 まず中間層の隠れ状
  []
 
@@ -234,15 +274,26 @@ File: data/method_ig_scores.png Graphic file (type bmp)
 <data/method_ig_scores.png>
  [11] [12] [13
 
-] [14
+]
 
-] [15]
+LaTeX Warning: Citation `jmlpaper' on page 14 undefined on input line 375.
+
+[14
+
+] [15] [16
+
+]
+Overfull \hbox (18.24487pt too wide) in paragraph at lines 476--490
+ [][] 
+ []
+
+[17] [18]
 第 4 章
-[16
+[19
 
 ]
 第 5 章
-(out/thesis_J.bbl [17
+(out/thesis_J.bbl [20
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
@@ -251,22 +302,26 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 19.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 32.
- [18
+) [21
 
-]) [19] (out/thesis_J.aux)
+] (out/thesis_J.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 2402 strings out of 468182
- 34690 string characters out of 5434878
- 442374 words of memory out of 5000000
- 31296 multiletter control sequences out of 15000+600000
- 643033 words of font info for 101 fonts, out of 8000000 for 9000
+ 2657 strings out of 468182
+ 38972 string characters out of 5434878
+ 447089 words of memory out of 5000000
+ 31537 multiletter control sequences out of 15000+600000
+ 645815 words of font info for 112 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 57i,6n,65p,631b,301s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,16n,65p,631b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/thesis_J.dvi (26 pages, 63224 bytes).
+Output written on out/thesis_J.dvi (28 pages, 73112 bytes).

@@ -2,7 +2,10 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
 \usepackage{float}
+\usepackage{lscape}
 \begin{document}
 	\thispagestyle{empty}
 \begin{center}
@@ -379,14 +382,115 @@ J_{\text{soft}}(\mathbf{p}^T, \mathbf{p}^S) = \frac{\sum_{t=1}^{L} p^T_{n,t} \cd
 ここで、$\mathbf{p}^T$ は教師モデルの重要度分布、$\mathbf{p}^S$ は生徒モデルの重要度分布を表す。分子は2つの分布の内積であり、従来のJaccard係数における積集合に相当する。分母は2つの分布の自乗和の和から内積を引いたものであり、和集合に相当する。Soft Jaccard Similarityは確率分布に対して連続的に定義されるため微分可能であり、損失関数として用いて勾配降下法により生徒モデルのパラメータを更新することが可能になる。
 
 \section{本研究で提案する最終的な蒸留損失項}
-本研究では以上の流れに従って、教師モデルと生徒モデルの重要度分布の類似度を最大化する損失項を提案する。最終的には以下の損失蒸留項として提案をまとめる。
+本研究では、今までに述べた重要度分布の類似度を最大化する損失項を、知識蒸留における生徒モデルの最終的な損失関数に追加する。具体的には、以下のように定義される。
+
+\begin{equation}
+\mathcal{L}_{\mathrm{SJ}}
+= 1 - J_{\text{soft}}(\mathbf{p}^T, \mathbf{p}^S)
+\label{eq:sj_loss}
+\end{equation}
+
+ここで、$\mathcal{L}_{\mathrm{SJ}}$ は本研究で提案する蒸留損失項を表す。$J_{\text{soft}}(\mathbf{p}^T, \mathbf{p}^S)$ は式\eqref{eq:soft_jaccard}で定義されるSoft Jaccard Similarityであり、教師モデルと生徒モデルの重要度分布の類似度を $[0,1]$ の範囲で評価する指標である。値が大きいほど両者の注目パターンが一致していることを意味する。
+
+本研究では、類似度の最大化を目的とする代わりに、最小化問題として扱うために損失項を $1-J_{\text{soft}}$ の形で定義している。これにより、完全一致の場合は $\mathcal{L}_{\mathrm{SJ}}=0$ となり，類似性が低い場合ほど損失が大きくなるという直観的な対応が得られる。本研究で提案は他の知識蒸留手法に組み込むことを想定しているため、交差エントロピー損失や既存の損失関数に加算する形で用いるため、最小化問題として扱うことは、他の損失関数と整合的に組み合わせることができる。
 
 
+
+\clearpage
 \section{提案手法を用いた生徒モデルの学習}
-\subsection{ベースライン}
-\subsection{学習設定・タスク}
-\subsection{損失関数の設計}
+本章では、提案する蒸留損失項を用いた生徒モデルの学習方法について述べる。本研究においては、GLUEの各タスクにおいてファインチューニングされたBERTを教師として知識蒸留されたTinyBERTに対して、提案手法を適用する。
 
+\subsection{ベースライン}
+ベースラインとして利用するTinyBERTはファインチューニングについて2段階の蒸留を行う。第1段階では中間層の隠れ状態について生徒の内部表現を教師に近づける。第2段階では教師の出力と学習データのラベルを併用して生徒の出力層を学習させる。本研究ではEncoderブロックを6層および4層の2種類を採用する。精度を表\ref{tab:tinybert_performance}に示す。
+\begin{table}[H]
+\centering
+\small
+\caption{TinyBERTのGLUEでの精度}
+\label{tab:tinybert_performance}
+\makebox[\textwidth][c]{%
+\resizebox{!}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\hline
+Model & MRPC & CoLA & STS-B & RTE & QQP & MNLI & QNLI & SST-2 \\
+Metric & acc & mcc & pearson & acc & acc & acc (m/mm) & acc & acc \\
+\hline
+BERT-base (FineTuned) & 88.24 & 53.39 & 87.95 & 72.92 & 90.88 & 83.9/83.4 & 91.45 & 92.43 \\
+TinyBERT-6L & 86.27 & 48.72 & 87.70 & 63.90 & 90.87 & 83.94 & 90.33 & 91.74 \\
+TinyBERT-4L & 85.54 & 37.48 & 87.41 & 63.18 & 90.12 & 81.80 & 87.06 & 90.94 \\
+\hline
+\end{tabular}%
+}%
+}
+\end{table}
+
+
+\subsection{学習タスク}
+本研究では、GLUEタスクに含まれるデータを対象とする。GLUEは自然言語理解の多様な側面を評価するために設計されたベンチマークであり、具体的なタスクの詳細を述べる。
+
+\begin{description}
+	\setlength{\itemsep}{0.4\baselineskip}
+	\item[CoLA] 文の文法的妥当性判定。与えられた文が文法的に自然（acceptable）か否かを判定する二値分類タスク。
+	\item[SST-2] 文の感情判定（感情分析）。短いレビュー文が肯定的か否定的かを判定する二値分類タスク。
+	\item[MRPC] パラフレーズ判定。2つの文が意味的に同義（paraphrase）かどうかを判定する二値分類タスク。
+	\item[STS-B] 文対の意味的類似度評価。2文の意味的類似度を連続値（0--5）で評価する回帰タスク。
+	\item[QQP] 質問ペアの重複判定。Quora上の2つの質問が同じ意図・内容かを判定する二値分類タスク。
+	\item[MNLI] 自然言語推論 (Multi-Genre NLI)。前提と仮説の関係が含意（entailment）、矛盾（contradiction）、中立（neutral）のいずれかを判定する三値分類タスク。
+	\item[QNLI] 質問と文の関連判定。与えられた文が質問に対する答えや関連情報を含むかどうかを判定する二値分類タスク。
+	\item[RTE] テキスト含意判定タスク。前提と仮説の含意関係（含意／非含意）を判定する二値分類タスク。
+\end{description}
+
+\begin{table}[H]
+\centering
+\small
+\caption{本研究で用いるGLUEタスクの例とラベル}
+\label{tab:glue_examples}
+\begin{tabularx}{\textwidth}{l X c}
+\toprule
+\textbf{タスク} & \textbf{入力例} & \textbf{ラベル} \\
+\midrule
+\textbf{CoLA} & ``He go to the store.'' & unacceptable \\
+\addlinespace
+\textbf{SST-2} & ``The movie was fantastic and deeply moving.'' & positive  \\
+\addlinespace
+\textbf{MRPC} & \begin{tabular}[t]{@{}l@{}}``The company reported profits.''\\ ``The firm announced earnings.''\end{tabular} & equivalent \\
+\addlinespace
+\textbf{STS-B} & \begin{tabular}[t]{@{}l@{}}``A man is playing a guitar.''\\ ``Someone plays a stringed instrument.''\end{tabular} & 4.5 \\
+\addlinespace
+\textbf{QQP} & \begin{tabular}[t]{@{}l@{}}``How to bake a cake?''\\ ``What is the process to make a cake?''\end{tabular} & duplicate \\
+\addlinespace
+\textbf{MNLI} & \begin{tabular}[t]{@{}l@{}}前提: ``A dog is sleeping on the couch.''\\ 仮説: ``An animal is resting on furniture.''\end{tabular} & entailment \\
+\addlinespace
+\textbf{QNLI} & \begin{tabular}[t]{@{}l@{}}質問: ``Who wrote Hamlet?''\\ 文: ``Hamlet was written by Shakespeare.''\end{tabular} & relevant / entailment \\
+\addlinespace
+\textbf{RTE} & \begin{tabular}[t]{@{}l@{}}前提: ``The sky is clear and blue.''\\ 仮説: ``The sky has no color.''\end{tabular} & not-entailed \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+また、本研究においてはTinyBERTの公式設定に従い、各タスクに関してデータ拡張を用いる。学習においては拡張されたデータを用いるが、一部のタスクに関して本提案の適用により計算コストが増大するため、学習データのランダムサンプリングにより拡張データから一定割合のデータを選択して用いる。各タスクにおける拡張データの利用状況を表\ref{tab:data_augmentation_ratio}に示す。
+
+\begin{table}[H]
+\centering
+\caption{各タスクにおけるデータ拡張と学習データ量}
+\label{tab:data_augmentation_ratio}
+\begin{tabular}{lrrr}
+\toprule
+& \textbf{オリジナル学習データ量} & \textbf{ランダムサンプリングの有無} & \textbf{学習データ量} \\
+\midrule
+\textbf{MRPC} & 3,669 & 無 & 225,098 \\
+\textbf{CoLA} & 8,552 & 無 & 211,059 \\
+\textbf{STS-B} & 5,750 & 無 & 320,113 \\
+\textbf{RTE} & 2,491 & 無 & 68,796 \\
+\textbf{QQP} & 363,847 & 有 & 1,221,763  \\
+\textbf{MNLI} & 392,703 & 有 & 1,091,538 \\
+\textbf{QNLI} & 104,744 & 無 & 1,250,571 \\
+\textbf{SST-2} & 67,350 & 無 & 1,107,510 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{提案手法の組み込みと学習}
+実験では、公式のTinyBERTの実装をベースに提案手法である蒸留項を導入し、蒸留をすることでTinyBERTの精度を維持しつつ、教師モデルを同じ単語に着目して推論を行うことを目指す。TinyBERTの学習は2段階で行われるが、第1段階で隠れ層を教師モデルを模倣したモデルを用意し、第2段階で出力層を教師から模倣する段階に介入する。
 
 
 
