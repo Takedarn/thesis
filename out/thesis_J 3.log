@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2026.1.14)  23 JAN 2026 14:47
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.euc) (TeX Live 2025) (preloaded format=platex 2026.1.14)  23 JAN 2026 13:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -287,15 +287,13 @@ Overfull \hbox (18.24487pt too wide) in paragraph at lines 476--490
  [][] 
  []
 
-[17] [18] [19
-
-]
+[17] [18]
 第 4 章
-[20
+[19
 
 ]
 第 5 章
-(out/thesis_J.bbl [21
+(out/thesis_J.bbl [20
 
 ]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
@@ -304,7 +302,7 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 19.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 32.
-) [22
+) [21
 
 ] (out/thesis_J.aux)
  ***********
@@ -318,12 +316,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2659 strings out of 468182
- 39005 string characters out of 5434878
- 447147 words of memory out of 5000000
- 31539 multiletter control sequences out of 15000+600000
+ 2657 strings out of 468182
+ 38972 string characters out of 5434878
+ 447089 words of memory out of 5000000
+ 31537 multiletter control sequences out of 15000+600000
  645815 words of font info for 112 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 57i,16n,65p,719b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,16n,65p,631b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/thesis_J.dvi (29 pages, 76524 bytes).
+Output written on out/thesis_J.dvi (28 pages, 73356 bytes).
