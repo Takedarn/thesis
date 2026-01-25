@@ -114,14 +114,13 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./data/method_overview.png
-INPUT ./data/method_overview.png
-INPUT ./data/method_overview.png
-INPUT extractbb -B cropbox -O data/method_overview.png
-INPUT ./data/method_ig_scores.png
-INPUT ./data/method_ig_scores.png
-INPUT ./data/method_ig_scores.png
-INPUT extractbb -B cropbox -O data/method_ig_scores.png
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT ./data/graph/method_overview.png
+INPUT ./data/graph/method_overview.png
+INPUT extractbb -B cropbox -O data/graph/method_overview.png
+INPUT ./data/graph/method_ig_scores.png
+INPUT ./data/graph/method_ig_scores.png
+INPUT extractbb -B cropbox -O data/graph/method_ig_scores.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin8.tfm
@@ -135,8 +134,134 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
+INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_6L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/CoLA/CoLA_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MNLI/MNLI_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MNLI/MNLI_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MNLI/MNLI_6L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/MNLI/MNLI_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MRPC/MRPC_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MRPC/MRPC_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MRPC/MRPC_6L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/MRPC/MRPC_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QNLI/QNLI_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QNLI/QNLI_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QNLI/QNLI_6L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/QNLI/QNLI_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QQP/QQP_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QQP/QQP_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QQP/QQP_6L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/QQP/QQP_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/RTE/RTE_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/RTE/RTE_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/RTE/RTE_6L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/RTE/RTE_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/SST-2/SST-2_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/SST-2/SST-2_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/SST-2/SST-2_6L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/SST-2/SST-2_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/STS-B/STS-B_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/STS-B/STS-B_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/STS-B/STS-B_6L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/STS-B/STS-B_6L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_4L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/CoLA/CoLA_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MNLI/MNLI_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MNLI/MNLI_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MNLI/MNLI_4L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/MNLI/MNLI_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MRPC/MRPC_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MRPC/MRPC_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/MRPC/MRPC_4L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/MRPC/MRPC_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QNLI/QNLI_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QNLI/QNLI_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QNLI/QNLI_4L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/QNLI/QNLI_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QQP/QQP_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QQP/QQP_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/QQP/QQP_4L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/QQP/QQP_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/RTE/RTE_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/RTE/RTE_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/RTE/RTE_4L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/RTE/RTE_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/SST-2/SST-2_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/SST-2/SST-2_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/SST-2/SST-2_4L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/SST-2/SST-2_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/STS-B/STS-B_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/STS-B/STS-B_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/jaccard/STS-B/STS-B_4L_Comparison_jaccard_comparison.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/jaccard/STS-B/STS-B_4L_Comparison_jaccard_comparison.png
+INPUT ./data/experiment_figure/figure/ranking/CoLA/CoLA_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/CoLA/CoLA_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/CoLA/CoLA_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/CoLA/CoLA_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MNLI/MNLI_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MNLI/MNLI_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MNLI/MNLI_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/MNLI/MNLI_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MRPC/MRPC_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MRPC/MRPC_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MRPC/MRPC_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/MRPC/MRPC_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QNLI/QNLI_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QNLI/QNLI_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QNLI/QNLI_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/QNLI/QNLI_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QQP/QQP_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QQP/QQP_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QQP/QQP_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/QQP/QQP_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/RTE/RTE_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/RTE/RTE_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/RTE/RTE_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/RTE/RTE_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/SST-2/SST-2_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/SST-2/SST-2_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/SST-2/SST-2_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/SST-2/SST-2_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/STS-B/STS-B_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/STS-B/STS-B_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/STS-B/STS-B_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/STS-B/STS-B_6L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/CoLA/CoLA_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/CoLA/CoLA_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/CoLA/CoLA_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/CoLA/CoLA_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MNLI/MNLI_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MNLI/MNLI_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MNLI/MNLI_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/MNLI/MNLI_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MRPC/MRPC_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MRPC/MRPC_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/MRPC/MRPC_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/MRPC/MRPC_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QNLI/QNLI_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QNLI/QNLI_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QNLI/QNLI_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/QNLI/QNLI_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QQP/QQP_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QQP/QQP_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/QQP/QQP_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/QQP/QQP_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/RTE/RTE_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/RTE/RTE_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/RTE/RTE_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/RTE/RTE_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/SST-2/SST-2_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/SST-2/SST-2_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/SST-2/SST-2_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/SST-2/SST-2_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/STS-B/STS-B_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/STS-B/STS-B_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT ./data/experiment_figure/figure/ranking/STS-B/STS-B_4L_Ranking_Comparison_ranking_log_styled.png
+INPUT extractbb -B cropbox -O data/experiment_figure/figure/ranking/STS-B/STS-B_4L_Ranking_Comparison_ranking_log_styled.png
 INPUT out/thesis_J.bbl
 INPUT out/thesis_J.bbl
 INPUT out/thesis_J.bbl

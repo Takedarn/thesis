@@ -5,37 +5,40 @@
 \contentsline {chapter}{\numberline {第2章}関連研究}{3}{}%
 \contentsline {section}{\numberline {2.1}知識蒸留}{3}{}%
 \contentsline {section}{\numberline {2.2}事前学習済み言語モデル}{5}{}%
-\contentsline {subsection}{\numberline {2.2.1}BERTの事前学習}{5}{}%
-\contentsline {subsection}{\numberline {2.2.2}教師モデルとしてのBERT}{5}{}%
-\contentsline {section}{\numberline {2.3}知識蒸留によって構築されたモデル}{5}{}%
-\contentsline {subsection}{\numberline {2.3.1}TinyBERT}{5}{}%
+\contentsline {subsection}{\numberline {2.2.1}事前学習済みモデル}{5}{}%
+\contentsline {subsection}{\numberline {2.2.2}本研究における教師モデルとしてのBERT}{5}{}%
+\contentsline {section}{\numberline {2.3}知識蒸留によって構築されたモデル}{6}{}%
 \contentsline {subsubsection}{データ拡張 (data augmentation)}{6}{}%
 \contentsline {subsubsection}{学習の流れ}{6}{}%
 \contentsline {paragraph}{事前学習段階 (pre-training)}{6}{}%
 \contentsline {paragraph}{下流タスクのファインチューニング (downstream fine-tuning)}{6}{}%
-\contentsline {section}{\numberline {2.4}モデルの推論根拠の解釈に関する研究}{7}{}%
-\contentsline {subsection}{\numberline {2.4.1}Integrated Gradient}{7}{}%
-\contentsline {paragraph}{感度 (Sensitivity)}{7}{}%
-\contentsline {paragraph}{完全性 (Completeness)}{7}{}%
-\contentsline {section}{\numberline {2.5}本研究の特徴}{8}{}%
-\contentsline {chapter}{\numberline {第3章}提案手法}{10}{}%
-\contentsline {section}{\numberline {3.1}概要}{10}{}%
-\contentsline {section}{\numberline {3.2}重要度分布の作成}{11}{}%
-\contentsline {subsection}{\numberline {3.2.1}Integrated Gradientsによる単語重要度の算出}{11}{}%
-\contentsline {subsection}{\numberline {3.2.2}重要度分布の作成}{12}{}%
-\contentsline {section}{\numberline {3.3}重要度分布の最小化}{14}{}%
-\contentsline {section}{\numberline {3.4}本研究で提案する最終的な蒸留損失項}{14}{}%
-\contentsline {section}{\numberline {3.5}提案手法を用いた生徒モデルの学習}{16}{}%
-\contentsline {subsection}{\numberline {3.5.1}ベースライン}{16}{}%
-\contentsline {subsection}{\numberline {3.5.2}学習タスク}{16}{}%
-\contentsline {subsection}{\numberline {3.5.3}損失関数の定義}{18}{}%
-\contentsline {chapter}{\numberline {第4章}評価}{20}{}%
-\contentsline {section}{\numberline {4.1}Jaccard係数による評価}{20}{}%
-\contentsline {subsection}{\numberline {4.1.1}実験条件}{20}{}%
-\contentsline {subsection}{\numberline {4.1.2}結果と考察}{20}{}%
-\contentsline {section}{\numberline {4.2}Rankingによる評価}{20}{}%
-\contentsline {subsection}{\numberline {4.2.1}実験条件}{20}{}%
-\contentsline {subsection}{\numberline {4.2.2}結果と考察}{20}{}%
-\contentsline {chapter}{\numberline {第5章}おわりに}{21}{}%
-\contentsline {section}{\numberline {5.1}本研究のまとめ}{21}{}%
-\contentsline {section}{\numberline {5.2}今後の課題}{21}{}%
+\contentsline {section}{\numberline {2.4}モデルの推論根拠の解釈に関する研究}{8}{}%
+\contentsline {subsection}{\numberline {2.4.1}Integrated Gradient}{8}{}%
+\contentsline {paragraph}{感度 (Sensitivity)}{8}{}%
+\contentsline {paragraph}{完全性 (Completeness)}{8}{}%
+\contentsline {section}{\numberline {2.5}本研究の特徴}{9}{}%
+\contentsline {chapter}{\numberline {第3章}提案手法}{11}{}%
+\contentsline {section}{\numberline {3.1}概要}{11}{}%
+\contentsline {section}{\numberline {3.2}重要度分布の作成}{12}{}%
+\contentsline {subsection}{\numberline {3.2.1}Integrated Gradientsによる単語重要度の算出}{12}{}%
+\contentsline {subsection}{\numberline {3.2.2}重要度分布の作成}{13}{}%
+\contentsline {section}{\numberline {3.3}重要度分布の最小化}{15}{}%
+\contentsline {section}{\numberline {3.4}本研究で提案する最終的な蒸留損失項}{15}{}%
+\contentsline {section}{\numberline {3.5}提案手法を用いた生徒モデルの学習}{17}{}%
+\contentsline {subsection}{\numberline {3.5.1}ベースライン}{17}{}%
+\contentsline {subsection}{\numberline {3.5.2}学習タスク}{17}{}%
+\contentsline {subsection}{\numberline {3.5.3}損失関数の定義}{19}{}%
+\contentsline {chapter}{\numberline {第4章}評価}{21}{}%
+\contentsline {section}{\numberline {4.1}概要}{21}{}%
+\contentsline {section}{\numberline {4.2}学習によるモデル精度}{22}{}%
+\contentsline {section}{\numberline {4.3}Jaccard係数による評価}{22}{}%
+\contentsline {subsection}{\numberline {4.3.1}ベースラインモデルのJaccard係数}{23}{}%
+\contentsline {subsection}{\numberline {4.3.2}提案手法で学習したモデルのJaccard係数}{23}{}%
+\contentsline {subsection}{\numberline {4.3.3}結果と考察}{27}{}%
+\contentsline {section}{\numberline {4.4}Rankingによる評価}{27}{}%
+\contentsline {subsection}{\numberline {4.4.1}ベースラインモデルのRanking指標}{28}{}%
+\contentsline {subsection}{\numberline {4.4.2}提案手法で学習したモデルのRanking指標}{29}{}%
+\contentsline {subsection}{\numberline {4.4.3}結果と考察}{32}{}%
+\contentsline {chapter}{\numberline {第5章}おわりに}{33}{}%
+\contentsline {section}{\numberline {5.1}本研究のまとめ}{33}{}%
+\contentsline {section}{\numberline {5.2}今後の課題}{34}{}%
