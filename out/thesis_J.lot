@@ -1,12 +1,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces TinyBERTのGLUEでの精度}}{17}{}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces 本研究で用いるGLUEタスクの例とラベル}}{18}{}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces 各タスクにおけるデータ拡張と学習データ量}}{18}{}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces 本研究で用いるGLUEタスクの例とラベル}}{18}{}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces 各タスクにおけるデータ拡張と学習データ量}}{18}{}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces 評価セットのインスタンス数}}{21}{}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces 提案手法を適用したモデルの精度}}{22}{}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces ベースラインと提案手法の性能比比較}}{22}{}%
 \contentsline {table}{\numberline {4.3}{\ignorespaces 教師モデルの注目単語の例（Ranking指標）}}{22}{}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces 生徒モデルの注目単語の例（Ranking指標）}}{22}{}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces Jaccard係数の評価例}}{23}{}%

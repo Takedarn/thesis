@@ -1,8 +1,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 提案手法の概要}}{11}{}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Integrated Gradientsによって算出された重要度スコア}}{12}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces MRPCにおけるTinyBERTと小型モデルの推論根拠の一致度比較}}{10}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 提案手法の概要}}{11}{}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Integrated Gradientsによって算出された重要度スコア}}{12}{}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 提案手法による各タスクの改善（TinyBERT-6L）}}{25}{}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces 提案手法による各タスクの改善（TinyBERT-4L）}}{26}{}%

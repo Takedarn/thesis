@@ -115,6 +115,10 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.t
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT ./data/experiment_figure/other/value_plot.png
+INPUT ./data/experiment_figure/other/value_plot.png
+INPUT ./data/experiment_figure/other/value_plot.png
+INPUT extractbb -B cropbox -O data/experiment_figure/other/value_plot.png
 INPUT ./data/graph/method_overview.png
 INPUT ./data/graph/method_overview.png
 INPUT extractbb -B cropbox -O data/graph/method_overview.png
@@ -134,6 +138,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_6L_Comparison_jaccard_comparison.png
 INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_6L_Comparison_jaccard_comparison.png
 INPUT ./data/experiment_figure/figure/jaccard/CoLA/CoLA_6L_Comparison_jaccard_comparison.png
